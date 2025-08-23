@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('perguntas', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('checklist_id')->constrained()->onDelete('cascade');
+            $table->text('texto');
             $table->timestamps();
         });
     }
